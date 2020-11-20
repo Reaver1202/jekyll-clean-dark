@@ -1,10 +1,7 @@
+
 <div class="sidebar ">
-  <h2>Recent Posts</h2>
-  <ul>
-    {% for post in site.posts limit:5 %}
-    <li><a href="{{ post.url | relative_url }}">{{ post.title }}</a></li>
-    {% endfor %}
-  </ul>
+  {% include search-field.html %}
+  {% include search-results.html %}
 </div>
 
 <div class="sidebar">
@@ -12,9 +9,27 @@
   <ul class="fa-ul">
     {% assign tags = (site.tags | sort:0) %}
     {% for tag in tags %}
-    <li><span class="fa-li"><i class="fas fa-tag"></i></span>
-            <a href="{{ '/tag/' | append: tag[0] | relative_url }}" data-toggle="tooltip" data-placement="right" title="{{ tag[1].size }}">
-        <span>{{tag[0] }}</span></a></li>
+      <li>
+          <span class="fa-li"><i class="fas fa-hashtag"></i></span>
+          <a href="{{ '/tag/' | append: tag[0] | relative_url }}" data-toggle="tooltip" data-placement="right" title="{{ tag[1].size }}">
+            <span>{{tag[0] }}</span>
+          </a>
+      </li>
+    {% endfor %}
+  </ul>
+</div>
+
+<div class="sidebar">
+  <h2>Categories</h2>
+  <ul class="fa-ul">
+    {% assign cats = (site.categories | sort:0) %}
+    {% for cat in cats %}
+      <li>
+          <span class="fa-li"><i class="fas fa-folder"></i></span>
+          <a href="{{ '/cat/' | append: cat[0] | relative_url }}" data-toggle="tooltip" data-placement="right" title="{{ cat[1].size }}">
+            <span>{{cat[0] }}</span>
+          </a>
+      </li>
     {% endfor %}
   </ul>
 </div>
