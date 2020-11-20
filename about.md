@@ -1,8 +1,7 @@
 ---
-layout: page 
+layout: page
 title: About
 
 ---
 
-# Some info 
-...about how cool you are ;)
+This page is a private Zettelkasten based on the Zettelkasten Principle.
