@@ -7,7 +7,7 @@ title: Categories
 <div class="page-content wc-container">
 	<div class="post">
 	  <ul class="fa-ul">
-	    {% assign cats = (site.categories | sort:0) %}
+	    {% assign cats = site.categories | sort %}
 	    {% for cat in cats %}
 	      <li>
 	          <span class="fa-li"><i class="fas fa-folder"></i></span>

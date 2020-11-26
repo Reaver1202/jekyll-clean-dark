@@ -6,7 +6,7 @@ title: Tags
 <div class="page-content wc-container">
 	<div class="post">
 		<ul class="fa-ul">
-			{% assign tags = (site.tags | sort:0) %}
+			{% assign tags = site.tags | sort %}
 			{% for tag in tags %}
 				<li>
 						<span class="fa-li"><i class="fas fa-hashtag"></i></span>
